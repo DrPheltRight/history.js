@@ -4,13 +4,16 @@
  * @copyright 2010-2011 Benjamin Arthur Lupton <contact@balupton.com>
  * @license New BSD License <http://creativecommons.org/licenses/BSD/>
  */
-
-// Closure
-(function(window,undefined){
+!function (definition) {
+  if (typeof define == 'function' && typeof define.amd == 'object')
+  	define(['jquery', 'history'], definition)
+  else definition()
+}(function (undefined) {
 	"use strict";
 
 	// Localise Globals
 	var
+		window = this,
 		History = window.History = window.History||{},
 		jQuery = window.jQuery;
 
@@ -73,5 +76,5 @@
 		History.init();
 	}
 
-})(window);
+});
 

@@ -4,8 +4,11 @@
  * @copyright 2010-2011 Benjamin Arthur Lupton <contact@balupton.com>
  * @license New BSD License <http://creativecommons.org/licenses/BSD/>
  */
-
-(function(window,undefined){
+!function (definition) {
+  if (typeof define == 'function' && typeof define.amd == 'object')
+  	define(definition)
+  else definition()
+}(function (undefined) {
 	"use strict";
 
 	// ========================================================================
@@ -13,6 +16,7 @@
 
 	// Localise Globals
 	var
+		window = this,
 		console = window.console||undefined, // Prevent a JSLint complain
 		document = window.document, // Make sure we are using the correct document
 		navigator = window.navigator, // Make sure we are using the correct navigator
